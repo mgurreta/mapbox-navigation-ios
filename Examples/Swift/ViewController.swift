@@ -157,6 +157,12 @@ class ViewController: UIViewController, MGLMapViewDelegate {
         // You can get a token here: http://docs.aws.amazon.com/mobile/sdkforios/developerguide/cognito-auth-aws-identity-for-ios.html
         // viewController.voiceController?.identityPoolId = "<#Your AWS IdentityPoolId. Remove Argument if you do not want to use AWS Polly#>"
         
+        let camera = mapView.camera
+        camera.pitch = 45
+        camera.altitude = 1_000
+        
+        viewController.pendingCamera = camera
+        viewController.simulatesLocationUpdates = true
         viewController.routeController.snapsUserLocationAnnotationToRoute = true
         viewController.voiceController?.volume = 0.5
         
