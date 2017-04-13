@@ -334,7 +334,7 @@ extension NavigationViewController: PulleyDelegate {
     }
 }
 
-extension RouteViewController: SimulationDelegate {
+extension NavigationViewController: SimulatedRouteDelegate {
     func simulation(_ locationManager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         mapViewController?.mapView.locationManager(locationManager, didUpdateLocations: locations)
         routeController.locationManager(locationManager, didUpdateLocations: locations)
